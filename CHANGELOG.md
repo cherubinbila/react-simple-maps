@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.0.4
+
+- Fixed security vulnerabilities via npm overrides (serialize-javascript, braces, micromatch)
+
 ## v3.0.3
 
 - Updated dependencies (Babel 7.29, Rollup 2.80, Mocha 10, etc.)
