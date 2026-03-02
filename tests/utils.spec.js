@@ -1,5 +1,4 @@
-
-import expect from "expect"
+const expect = require("expect")
 
 describe("sampleTest", () => {
   it("should exist", () => {
