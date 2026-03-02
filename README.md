@@ -32,26 +32,28 @@ yarn add @cherubinbila/react-simple-maps
 `React-simple-maps` exposes a set of components that can be combined to create svg maps with markers and annotations. In order to render a map you have to provide a reference to a valid topojson file. You can find example topojson files on [here](https://github.com/topojson/world-atlas) or [here](https://github.com/deldersveld/topojson). To learn how to make your own topojson maps from shapefiles, please read ["How to convert and prepare TopoJSON files for interactive mapping with d3"](https://hackernoon.com/how-to-convert-and-prepare-topojson-files-for-interactive-mapping-with-d3-499cf0ced5f) on medium.
 
 ```jsx
-import React from "react";
-import { createRoot } from "react-dom/client";
-import { ComposableMap, Geographies, Geography } from "@cherubinbila/react-simple-maps";
+import React from "react"
+import { createRoot } from "react-dom/client"
+import {
+  ComposableMap,
+  Geographies,
+  Geography,
+} from "@cherubinbila/react-simple-maps"
 
 const geoUrl =
-  "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json";
+  "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json"
 
 const App = () => (
   <ComposableMap>
     <Geographies geography={geoUrl}>
       {({ geographies }) =>
-        geographies.map((geo) => (
-          <Geography key={geo.rsmKey} geography={geo} />
-        ))
+        geographies.map((geo) => <Geography key={geo.rsmKey} geography={geo} />)
       }
     </Geographies>
   </ComposableMap>
-);
+)
 
-createRoot(document.getElementById("app")).render(<App />);
+createRoot(document.getElementById("app")).render(<App />)
 ```
 
 Check out the [live example](https://codesandbox.io/s/basic-map-wvlol)
@@ -66,9 +68,9 @@ React-simple-maps does not restrict you to one specific map and relies on custom
 
 In order for this to work properly, you will however need to provide these valid map files to react-simple-maps yourself. Luckily, there are decent sources for map files on github and elsewhere. Here are some you can check out:
 
-* [Natural Earth](https://github.com/nvkelso/natural-earth-vector)
-* [Topojson maps by @deldersveld](https://github.com/deldersveld/topojson)
-* [Topojson world atlas](https://github.com/topojson/world-atlas)
+- [Natural Earth](https://github.com/nvkelso/natural-earth-vector)
+- [Topojson maps by @deldersveld](https://github.com/deldersveld/topojson)
+- [Topojson world atlas](https://github.com/topojson/world-atlas)
 
 ### License
 
