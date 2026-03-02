@@ -1,8 +1,11 @@
-<img src="https://img.shields.io/bundlephobia/minzip/react-simple-maps?color=%2328cb95&label=gzip" />
+[![npm version](https://img.shields.io/npm/v/@cherubinbila/react-simple-maps.svg)](https://www.npmjs.com/package/@cherubinbila/react-simple-maps)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/@cherubinbila/react-simple-maps?color=%2328cb95&label=gzip)](https://bundlephobia.com/package/@cherubinbila/react-simple-maps)
 
-# react-simple-maps
+# @cherubinbila/react-simple-maps
 
-Create beautiful SVG maps in react with d3-geo and topojson using a declarative api.
+Fork of [react-simple-maps](https://github.com/zcreativelabs/react-simple-maps) with **React 19** support.
+
+Create beautiful SVG maps in React with d3-geo and topojson using a declarative API.
 
 Read the [docs](https://www.react-simple-maps.io/docs/getting-started/), or check out the [examples](https://www.react-simple-maps.io/examples/).
 
@@ -14,16 +17,14 @@ Since `react-simple-maps` leaves DOM work to react, it can also easily be used w
 
 ### Install
 
-To install `react-simple-maps`
-
 ```bash
-$ npm install react-simple-maps
+npm install @cherubinbila/react-simple-maps
 ```
 
-...or if you use yarn:
+Or with yarn:
 
 ```bash
-$ yarn add react-simple-maps
+yarn add @cherubinbila/react-simple-maps
 ```
 
 ### Usage
@@ -32,32 +33,25 @@ $ yarn add react-simple-maps
 
 ```jsx
 import React from "react";
-import ReactDOM from "react-dom";
-import { ComposableMap, Geographies, Geography } from "react-simple-maps";
+import { createRoot } from "react-dom/client";
+import { ComposableMap, Geographies, Geography } from "@cherubinbila/react-simple-maps";
 
-// url to a valid topojson file
 const geoUrl =
   "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json";
 
-const App = () => {
-  return (
-    <div>
-      <ComposableMap>
-        <Geographies geography={geoUrl}>
-          {({ geographies }) =>
-            geographies.map((geo) => (
-              <Geography key={geo.rsmKey} geography={geo} />
-            ))
-          }
-        </Geographies>
-      </ComposableMap>
-    </div>
-  );
-};
+const App = () => (
+  <ComposableMap>
+    <Geographies geography={geoUrl}>
+      {({ geographies }) =>
+        geographies.map((geo) => (
+          <Geography key={geo.rsmKey} geography={geo} />
+        ))
+      }
+    </Geographies>
+  </ComposableMap>
+);
 
-document.addEventListener("DOMContentLoaded", () => {
-  ReactDOM.render(<App />, document.getElementById("app"));
-});
+createRoot(document.getElementById("app")).render(<App />);
 ```
 
 Check out the [live example](https://codesandbox.io/s/basic-map-wvlol)
@@ -78,4 +72,4 @@ In order for this to work properly, you will however need to provide these valid
 
 ### License
 
-MIT licensed. Copyright (c) Richard Zimerman 2017. See [LICENSE.md](https://github.com/zcreativelabs/react-simple-maps/blob/master/LICENSE) for more details.
+MIT licensed. Fork of [react-simple-maps](https://github.com/zcreativelabs/react-simple-maps) by Richard Zimerman. See [LICENSE](LICENSE) for more details.
