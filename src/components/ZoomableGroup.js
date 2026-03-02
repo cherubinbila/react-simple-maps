@@ -61,6 +61,7 @@ ZoomableGroup.propTypes = {
   minZoom: PropTypes.number,
   maxZoom: PropTypes.number,
   translateExtent: PropTypes.arrayOf(PropTypes.array),
+  filterZoomEvent: PropTypes.func,
   onMoveStart: PropTypes.func,
   onMove: PropTypes.func,
   onMoveEnd: PropTypes.func,

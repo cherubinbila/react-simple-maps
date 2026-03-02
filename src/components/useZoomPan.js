@@ -102,6 +102,10 @@ export default function useZoomPan({
 
     zoomRef.current = zoom
     svg.call(zoom)
+
+    return () => {
+      svg.on(".zoom", null)
+    }
   }, [
     width,
     height,
