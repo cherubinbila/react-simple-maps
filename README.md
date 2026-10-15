@@ -3,6 +3,16 @@
 
 # @cherubinbila/react-simple-maps
 
+> [!WARNING]
+> **This fork is deprecated and no longer maintained.** The original [react-simple-maps](https://github.com/zcreativelabs/react-simple-maps) is actively maintained again and supports React 19 since v5. Please use it instead:
+>
+> ```bash
+> npm uninstall @cherubinbila/react-simple-maps
+> npm install react-simple-maps@5
+> ```
+>
+> v5 includes breaking changes compared to v3, see the [upstream changelog](https://github.com/zcreativelabs/react-simple-maps/blob/main/CHANGELOG.md).
+
 Fork of [react-simple-maps](https://github.com/zcreativelabs/react-simple-maps) with **React 19** support.
 
 Create beautiful SVG maps in React with d3-geo and topojson using a declarative API.
